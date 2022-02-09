@@ -8,8 +8,7 @@ def get_online():
         soup = BeautifulSoup(page.content, "html.parser")
         price = soup.find(class_="col-lg-12 text-center").get_text()[45:][:19]
         a = f"♻ {price}"
-        print(a.replace(")", " "))
+        return a.replace(")", " ")
     except:
         return "server vaqtincha ishlamayapti..."
 
-print(get_online())
