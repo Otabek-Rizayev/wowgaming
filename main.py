@@ -1,6 +1,6 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
-from index import get_online
+from index import get_online, get_who
 API_TOKEN = '5146056686:AAFsI3qbDMwGTSdckEiObbBhgIz2e0Npphg'
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -25,7 +25,7 @@ async def online(message: types.Message):
 @dp.message_handler(commands=['who'])
 async def who(message: types.Message):
     
-    await message.reply("Bu kommanda hozircha ishlamaydi. Tez orada bartaraf etamiz!")
+    await message.answer(get_who())
 
 
 @dp.message_handler()
