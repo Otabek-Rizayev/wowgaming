@@ -17,16 +17,14 @@ def get_online():
 
 def get_who():
     try:
-        price2 = soup.find(class_="table table-striped").get_text()[20:]       
+        price2 = soup.find(class_="table table-striped").get_text()[20:]   
         a = list(price2)
         b = "".join(a)
         c = b.replace("80", "\n")
-        #d = c.replace("255", " Admin\n")
         return f"Hozir o`yinda: \n{c}"
     except:
         return "serverdan javob kelmadi..."
 
-    
     
     
 
