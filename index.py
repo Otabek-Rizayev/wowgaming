@@ -18,7 +18,7 @@ def get_who():
         price2 = soup.find(class_="table table-striped").get_text()[20:]   
         b = list(price2)
         c = "".join(b)
-        d = b.replace("80", "\n")
+        d = c.replace("80", "\n")
         return f"🌐 Hozir o`yinda: \n{c}"
 
     
