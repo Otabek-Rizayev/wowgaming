@@ -1,7 +1,8 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
-from index import get_online, get_who
-API_TOKEN = '5146056686:AAFsI3qbDMwGTSdckEiObbBhgIz2e0Npphg'
+from index import get_online
+from index import get_who
+API_TOKEN = '5280417676:AAEKx7yiw6L10Cv74qgRETk53Kpip9Vpg9E'
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
@@ -15,25 +16,16 @@ async def send_welcome(message: types.Message):
     await message.reply("WoWGaming botga hush kelibsiz.\nYordam uchun /help buyrug'ini kiriting!")
 
 @dp.message_handler(commands=['help'])
-async def help(message: types.Message):
+async def help_cmd(message: types.Message):
     await message.reply("Yordam!\n- /online buyrug'i orqali serverda qancha online borligini ko'rish mumkin.\n- /who buyrug'i orqali serverdagi barcha playerlar ro`yxatini ko'rish mumkin.")
 
 @dp.message_handler(commands=['online'])
-async def online(message: types.Message):
+async def online_cmd(message: types.Message):
     await message.answer(get_online())
 
 @dp.message_handler(commands=['who'])
-async def who(message: types.Message):
-    
+async def who_cmd(message: types.Message):
     await message.answer(get_who())
-
-
-@dp.message_handler()
-async def echo(message: types.Message):
-    # old style:
-    # await bot.send_message(message.chat.id, message.text)
-
-    await message.answer(message.txt)
 
 
 if __name__ == '__main__':

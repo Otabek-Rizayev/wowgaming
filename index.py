@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from pprint import pprint
 
 url = "http://wowgaming.uz/"
 page = requests.get(url)
@@ -13,18 +12,14 @@ def get_online():
         return a.replace(")", "  ")
     except:
         return "server vaqtincha ishlamayapti..."
-
+    
 
 def get_who():
-    try:
         price2 = soup.find(class_="table table-striped").get_text()[20:]   
         a = list(price2)
         b = "".join(a)
         c = b.replace("80", "\n")
-        return f"Hozir o`yinda: \n{c}"
-    except:
-        return "serverdan javob kelmadi..."
+        return (f"🌐 Hozir o`yinda: \n{c}")
 
-    
     
 
