@@ -16,10 +16,10 @@ def get_online():
 
 def get_who():
         price2 = soup.find(class_="table table-striped").get_text()[20:]   
-        a = list(price2)
-        b = "".join(a)
-        c = b.replace("80", "\n")
-        return (f"🌐 Hozir o`yinda: \n{c}")
+        b = list(price2)
+        c = "".join(a)
+        d = b.replace("80", "\n")
+        return f"🌐 Hozir o`yinda: \n{c}"
 
     
 
