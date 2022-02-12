@@ -19,7 +19,7 @@ def get_who():
         b = list(price2)
         c = "".join(b)
         d = c.replace("80", "\n")
-        return f"🌐 Hozir o`yinda: \n{c}"
+        return f"🌐 Hozir o`yinda: \n{d}"
 
     
 
