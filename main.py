@@ -13,7 +13,6 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-#asyncio.run(main())
 @dp.message_handler(commands=['online'])
 async def online_cmd(message: types.Message):
     async with aiohttp.ClientSession() as session:
