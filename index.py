@@ -1,25 +1,21 @@
-import requests
+import aiohttp
+import asyncio
 from bs4 import BeautifulSoup
-
-url = "http://wowgaming.uz/"
-page = requests.get(url)
-soup = BeautifulSoup(page.content, "html.parser")
-
-def get_online():
-    try:
-        price = soup.find(class_="col-lg-12 text-center").get_text()[45:][:19]
-        a = f"♻ {price}"
-        return a.replace(")", "  ")
-    except:
-        return "server vaqtincha ishlamayapti..."
-    
-
-def get_who():
-        price2 = soup.find(class_="table table-striped").get_text()[20:]   
-        b = list(price2)
-        c = "".join(b)
-        d = c.replace("80", "\n")
-        return f"🌐 Hozir o`yinda: \n{d}"
-
-    
-
+"""
+async def main():
+    async with aiohttp.ClientSession() as session:
+        async with session.get('http://wowgaming.uz') as response:
+            text = await response.text(encoding="utf-8", errors="ignore")
+            soup = BeautifulSoup(text, "html.parser")
+            price = soup.find(id="modal-id2").get_text()[52:][:129]
+            a = list(price)
+            a[13] = " "
+            b = "".join(a)
+            c = b.replace("80", "\n")
+            
+            
+            #d = c.replace("2", " ")[5:]
+            
+            print(c)
+#
+asyncio.run(main())"""
