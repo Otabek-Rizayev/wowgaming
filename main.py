@@ -54,7 +54,7 @@ async def online_cmd(message: types.Message):
 
 
 @dp.message_handler(commands=['who'])
-@dp.message_handler(text_startswith="что там")
+@dp.message_handler(text_startswith="че там")
 async def who_cmd(message: types.Message):
     async with aiohttp.ClientSession() as session:
         async with session.get('http://wowgaming.uz') as response:
